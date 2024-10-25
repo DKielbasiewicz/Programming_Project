@@ -1,3 +1,3 @@
-['79', 'Daniel Kie³basiewicz', '16-10-2024', '17-10-2024', 1, '997', 'daniel@gmail.com', 2, 0, 1, 'campers', 2, 120, 'PAID']
+['79', 'Daniel KieÂ³basiewicz', '16-10-2024', '17-10-2024', 1, '997', 'daniel@gmail.com', 2, 0, 1, 'campers', 2, 120, 'PAID']
 ['95', 'Emilia Zaleska', '14-10-2024', '16-10-2024', 2, '992', 'emila@gmail.com', 1, 0, 1, 'tents', 1, 90, 'NOT PAID']
-['154', 'Roch Ekiert', '18-10-2024', '21-10-2024', 3, '991', 'sten@gmail.com', 2, 0, 0, 'cars', 1, 240, 'NOT PAID']
+['150', 'Roch Ekiert', '18-10-2024', '21-10-2024', 3, '991', 'sten@gmail.com', 2, 0, 0, 'cars', 1, 240, 'NOT PAID']
