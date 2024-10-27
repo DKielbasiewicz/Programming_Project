@@ -25,8 +25,10 @@ colors = {
 
 def ReservationNumberGenerator(start_number, end_number):
     data = DataCheck()
+    archive_data = ArchiveCheck()
+    composed_data = data + archive_data
     reservation_numbers = []
-    for line in data:
+    for line in composed_data:
         reservation_numbers.append(line[0].strip())
     while True:
         reservation_number = randint(start_number, end_number)
@@ -85,6 +87,16 @@ def DataCheck():
     file.close()
     return data
 
+def ArchiveCheck():
+    archive_data = []
+    file = io.open("old_reservations.txt","r")
+    for line in file:
+        if line == "":
+            continue
+        archive_data.append(eval(line.strip()))
+    file.close()
+    return archive_data
+
 def DataSave(new_data):
     file = io.open("reservations.txt","w")
     if len(new_data) == 0:
@@ -95,3 +107,41 @@ def DataSave(new_data):
             file.write("\n" + str(new_data[i]))
     file.close()
     return "Data Saved"
+
+
+def ArchiveReservations(day_date, date_format):
+    data = DataCheck()
+    new_data = []
+    archive_data = []
+    if not data:
+        return False
+    for i in range(len(data)):
+        if dt.datetime.strptime(data[i][3], date_format) < day_date:
+            archive_data.append(data[i])
+        else:
+            new_data.append(data[i])
+    DataSave(new_data)
+    archive_file = io.open("old_reservations.txt","a+")
+    archive_file.seek(0)
+    content = archive_file.read()
+    if content:
+        archive_file.write("\n")
+    for i in range(len(archive_data)):
+        archive_file.write(str(archive_data[i])+"\n")
+    archive_file.close()
+    return 0
+        
+    
+    
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        

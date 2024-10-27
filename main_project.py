@@ -9,6 +9,7 @@ import datetime as dt
 dt = dt.datetime.now()
 date = dt.strftime("%d %b %Y, %A")
 date_format = "%d-%m-%Y"
+mfunc.ArchiveReservations(dt, date_format)
 print(f"\nHello my nicest user, Welcome to booking management system!\nToday is {date}") #Only the project name was discussed with my housemate the rest is done by myself.
 start_number = 1
 end_number = 200
